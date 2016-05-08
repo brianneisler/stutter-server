@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+
+program
+  .description('run stutter server')
+  .parse(process.argv);
+
+(function(options) {
+  var run = require('../').commands.run;
+  run(options)
+    .then(function() {
+      console.log('run complete. killing process');
+      process.exit();
+    })
+    .catch(function() {
+      console.log('run error. killing process');
+      process.exit(1);
+    });
+})(program);

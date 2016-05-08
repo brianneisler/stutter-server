@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+- '6.0'
+cache:
+  directories:
+  - node_modules
+  - "$HOME/.npm"
+  - "$HOME/.gem"
+before_install:
+- npm install -g gulp
+script:
+- gulp test
+- gulp
+deploy:
+  provider: npm
+  email: me@brianneisler.com
+  skip_cleanup: true
+  on:
+    tags: true
+  api_key:
+    secure: TURGBmSFh/2jJLobhZ2tGF2HGTj28Nsj6jTbz6qZva3JTXBLRRwcqjq3OhhdS6TLpEX5tR9ux18xa5nVTef/8Hr6eQZj0Js/K+FJTD7Q0e72+lteXklYFn1aDqSmB8jKp2NK5N1+eSEp9wDLDq2uitvUkR4jKIJu2H9YLmrVbyzg3weQCSliK9CNZF/cBuDnknbXJROkG5Lo2EnMzglSKoK/39DAD+vKOOvn1g6ANw3gGzVnqStUYcNXbeva7fdfZqBq5XEcsolVIlEPuWCLbhqiBvmzOWHiSurA30yv0E1Xqd838HHKihQSggJE3DEV66bbFVITSRpCEf9D+0bgLRwRvpOVox/1E8Tc/m1Hp592sk1cZxgMTM+69EPwAWEQsFPCOD+bPEaAY8EyUXdiwTqqhhOVUPMiRJvB+8k3t9cE/w9H6wgEOJO1iyXb5ahDDAY5ZoZjdUKWhKyd0YT7Buf3KxIOqcdjamqWgVR7UQqxSfUqlka4zfJDHqbSL+biWtfspV8An9Hsy2GsVEcxAaOl3PQhWQPAgoBuVCFqiPXm2wW/+yoW5AOrmj+Ee5MiGgTxPByT4j9kPTUkZEFUDjj6VYYbDMxIktvG0bOncCJyeuelQupGSBsBZd9tXj70sG2Nj6Gbu0Sh4ueJjb5V6UQMmimyimy4sdIDZrZHdNY=

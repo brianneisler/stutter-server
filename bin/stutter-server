@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var package = require('../package.json');
+
+program
+  .version(package.version)
+  .command('run', 'run stutter server')
+  .parse(process.argv);
